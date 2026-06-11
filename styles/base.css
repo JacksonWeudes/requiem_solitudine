@@ -31,6 +31,8 @@ a{
 }
 
 button{
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    text-transform: capitalize;
     cursor: pointer;
     border: 1px solid;
     outline: none;
