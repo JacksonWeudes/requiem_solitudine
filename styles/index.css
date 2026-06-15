@@ -20,17 +20,15 @@ body.active{
     align-items: center;
 
     width: 100%;
-    padding-inline: 1.5rem;
+    padding: .5rem 1.5rem;
 
-    border: 1px solid;
-    background-color: #fff;
-
+    background-color: #e0e0e0;
     z-index: 9999;
 }
 
 .header .logo{
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
 }
 
 .header .menu-icon{
@@ -73,14 +71,13 @@ body.active{
 
 .header .side-menu{
     position: fixed;
-    top: 3.9rem;
+    top: 3.7rem;
     right: -120%;
 
     width: 55%;
     height: 100%;
 
-    border: 1px solid;
-    background-color: #fff;
+    background-color: #e0e0e0;
 
     z-index: 9999;
     transition: right .3s ease-in-out;
@@ -116,8 +113,7 @@ body.active{
 
     height: 100dvh;
 
-    border: 1px solid;
-    background-color: rgba(0, 0, 0, 0.096);
+    background-color: #cacaca;
 }
 .main .hero .logo{
     width: 250px;
@@ -126,6 +122,7 @@ body.active{
 .main .hero h1{
     font-size: clamp(2.3rem, 4vw, 4rem);
     text-transform: uppercase;
+    text-align: center;
 }
 .main .hero p{
     font-size: clamp(1.2rem, 2vw, 1.4rem);
@@ -133,5 +130,98 @@ body.active{
 }
 .main .hero button{
     margin-top: .5rem;
-    padding: 8px 30px;
+    transition: transform .2s ease-in-out;
+}
+
+.main .releases{
+    padding: 3rem 2rem;
+    border: 1px solid;
+
+    background-color: #a8a8a8;
+}
+.main .releases h2{
+    margin-bottom: 2rem;
+}
+.main .releases img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+.main .releases .album-desc{
+    border-top: 1px solid;
+    padding-block: 2rem;
+}
+.main .releases p{
+    padding-block: .5rem;
+}
+.main .releases .album-desc ol{
+    list-style: none;
+    padding-block: .5rem;
+}
+.main .releases .album-desc ol li{
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px){
+    .header{
+        padding: .5rem 4rem;
+    }
+    .header .logo{
+        width: 50px;
+        height: 50px;
+    }
+    .header .menu-icon{
+        display: none;
+    }
+    .header .desk-nav{
+        display: flex;
+        gap: 1rem;
+    }
+    .header .desk-nav a{
+        font-size: 1.1rem;
+        text-transform: capitalize;
+    }
+
+
+    .main .releases{
+        padding-inline: 2rem;
+    }
+    .main .releases .box {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 1rem;
+    }
+    .main .releases .box img{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    .main .releases .box .album-desc{
+        padding: 0;
+        border: none;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .main .releases{
+        padding: 4rem;
+    }
+    .main .releases .box{
+        gap: 3rem;
+    }
+    .main .releases img{
+        height: 50%;
+    }
+    .main .releases .box .album-desc ol li{
+        font-size: 1.5rem;
+        margin-block: .5rem;
+    }
+    .main .releases .box .album-desc button{
+        width: 30%;
+    }
+    .main .releases .box .album-desc{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
 }

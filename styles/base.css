@@ -19,6 +19,7 @@ body{
 
 h1, h2, h3{
     font-family: var(--title);
+    text-transform: uppercase;
 }
 
 p, a, button{
@@ -37,4 +38,26 @@ button{
     border: 1px solid;
     outline: none;
     background-color: transparent;
+
+    transition: transform .2s ease-in-out;
+}
+.main button{
+    padding: 10px 30px;
+}
+.main button:hover{
+    transform: scale(1.05);
+}
+
+.main h2{
+    font-size: clamp(2rem, 4vw, 2.5rem);
+}
+.main h3{
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.main p{
+    font-size: 1.1rem;
+}
+
+img{
+    width: 100%;
 }
