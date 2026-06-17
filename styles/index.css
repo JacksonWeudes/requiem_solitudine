@@ -22,8 +22,13 @@ body.active{
     width: 100%;
     padding: .5rem 1.5rem;
 
-    background-color: #e0e0e0;
+    background-color: transparent;
     z-index: 9999;
+
+    transition: background-color .3s ease-in-out;
+}
+.header.active{
+    background-color: #e0e0e0;
 }
 
 .header .logo{
@@ -118,6 +123,12 @@ body.active{
 .main .hero .logo{
     width: 250px;
     height: 250px;
+
+    animation: spin 30s linear infinite;
+
+}
+.main .hero .logo:hover{
+    animation-play-state: paused;
 }
 .main .hero h1{
     font-size: clamp(2.3rem, 4vw, 4rem);
@@ -131,6 +142,10 @@ body.active{
 .main .hero button{
     margin-top: .5rem;
     transition: transform .2s ease-in-out;
+}
+@keyframes spin{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
 }
 
 .main .releases{
@@ -148,7 +163,6 @@ body.active{
     margin: auto;
 }
 .main .releases .album-desc{
-    border-top: 1px solid;
     padding-block: 2rem;
 }
 .main .releases p{
@@ -160,7 +174,81 @@ body.active{
 }
 .main .releases .album-desc ol li{
     font-size: 1.2rem;
+    margin-block: .3rem;
 }
+.main .releases .album-desc button{
+    margin-top: .5rem;
+}
+
+.main .discography{
+    padding: 4rem 1rem;
+    background-color: #8a8a8a;
+}
+.main .discography h2{
+    margin-bottom: 2rem;
+}
+.main .discography .disco-box{
+    display: flex;
+    gap: .5rem;
+}
+.main .discography .disco-box .disco-card{
+    position: relative;
+
+    width: 300px;
+
+    text-align: center;
+}
+.main .discography .disco-box .disco-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main 
+.discography 
+.disco-box 
+.disco-card 
+.card-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.459);
+    backdrop-filter: blur(5px);
+
+    transition: all .3s ease-in-out;
+}
+.main .discography
+.disco-box 
+.disco-card:hover 
+.card-overlay{
+    visibility: visible;
+    height: 100%;
+    opacity: 1;
+}
+.main 
+.discography 
+.disco-box .disco-card 
+.card-overlay button{
+    border: none;
+}
+.main 
+.discography 
+.disco-box .disco-card 
+.card-overlay i{
+    font-size: 4rem;
+    color: #fff;
+}
+
 
 @media screen and (min-width: 768px){
     .header{
@@ -200,6 +288,13 @@ body.active{
         padding: 0;
         border: none;
     }
+
+    .main .discography{
+        padding-inline: 2rem;
+    }
+    .main .discography .disco-box{
+        gap: 1rem;
+    }
 }
 
 @media screen and (min-width: 1024px){
@@ -223,5 +318,9 @@ body.active{
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .main .discography{
+        padding: 5rem 4rem;
     }
 }
