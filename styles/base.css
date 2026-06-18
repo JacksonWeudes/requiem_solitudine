@@ -5,6 +5,9 @@
 :root{
     --title: "Spectral", serif;
     --text: "Inter", sans-serif;
+
+    --red: #FF002F;
+    --black: #100101;
 }
 
 *{
